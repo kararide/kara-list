@@ -11,9 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018094159) do
+ActiveRecord::Schema.define(version: 20141020160112) do
 
-  create_table "geners", force: true do |t|
+  create_table "animes", force: true do |t|
+    t.string   "title"
+    t.text     "summary"
+    t.integer  "episodes"
+    t.integer  "status"
+    t.integer  "genre_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "animes", ["genre_id"], name: "index_animes_on_genre_id"
+
+  create_table "genres", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

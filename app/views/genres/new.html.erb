@@ -1,0 +1,11 @@
+<h1>Add new genre</h1>
+<%= form_for(@genre) do |f| %>
+	<div class="form-group">
+		
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.submit "Add!", class: "btn btn-default" %>
+	</div>
+<% end %>
