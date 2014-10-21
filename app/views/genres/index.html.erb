@@ -1,0 +1,11 @@
+<ol>
+	<% @genres.each do |genre| %>
+		<li>
+			<dl>
+				<%= genre.name %>
+			</dl>
+		</li>
+	<% end %>
+</ol>
+
+<p><%= link_to "Add new genre", new_genre_path, class: "button tiny" %></p>
