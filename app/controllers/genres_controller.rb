@@ -1,31 +1,26 @@
 class GenresController < ApplicationController
 
-	def new		
+	def index
+		@genre = Genre.all
+	end
+
+	def new
 		@genre = Genre.new
 	end
 
-	def index
-		@genres = Genre.all
+	def create
+		@genre = Genre.new(genres_params)
+		@genre.save
+		redirect_to @genre
 	end
 
 	def show
 		@genre = Genre.find(params[:id])
 	end
 
-	def create
-		@genre = Genre.new(secure_params)
+	private 
 
-		if @genre.valid?
-      flash[:success] = "Genre added!"
-      redirect_to genres_path
-    else
-      render 'new'
-    end
-	end
-
-	private
-
-	def secure_params
+	def genres_params
 		params.require(:genre).permit(:name)
 	end
 
