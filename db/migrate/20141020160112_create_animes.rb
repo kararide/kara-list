@@ -4,7 +4,7 @@ class CreateAnimes < ActiveRecord::Migration
       t.string :title
       t.text :summary
       t.integer :episodes
-      t.integer :status
+      t.string :status
       t.references :genre, index: true
 
       t.timestamps

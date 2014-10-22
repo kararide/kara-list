@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20141020160112) do
     t.string   "title"
     t.text     "summary"
     t.integer  "episodes"
-    t.integer  "status"
+    t.string   "status"
     t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"

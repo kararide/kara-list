@@ -9,6 +9,7 @@ class AnimesController < ApplicationController
 	end
 
 	def create
+		@genres_id = Genre.all(genres_params)
 		@anime = Anime.new(animes_params)
 		@anime.save
 		redirect_to @anime
@@ -22,6 +23,10 @@ class AnimesController < ApplicationController
 
 	def animes_params
 		params.require(:anime).permit([:title, :summary, :episodes, :status, :genre_id, :genre])
+	end
+
+	def genres_params
+		params.require(:genre).permit(:name)
 	end
 
 end

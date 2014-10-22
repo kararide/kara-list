@@ -21,18 +21,22 @@
         </div>
         <div class="row">
           <div class="large-4 columns">
-          	<%= f.label :status %>
-          	<%= radio_button_tag(:status, "on") %>
-						<%= label_tag(:status, "Ongoing") %>
-						<%= radio_button_tag(:status, "fin") %>
-						<%= label_tag(:status, "Finished") %>
+
+            <label for="status">Status:</label>
+              <% [ 'ongoing', 'finished' ].each do |status| %>
+                <br><%= radio_button_tag 'status', status, @status == status %>
+                <%= status.humanize %>
+              <% end %>
+
           </div>
           <div class="large-6 columns">
-          	<%= f.label :genre_id %>
-          	<%= f.select :genre_id, Genre.all.collect {|x| [x.name, x.id]}, {}, :multiple => true %>
+            <label for="genre">Genres:</label>
+
+              <%= f.select :genre_id, Genre.all.collect{ |c| [c.name, c.id ]}, {:multiple=>true} %>
           </div>
           <%= f.submit "ADD", class: "button tiny expand" %>
         </div>
+
       <% end %>
     </fieldset>
   </div>
