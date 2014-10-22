@@ -21,22 +21,23 @@
         </div>
         <div class="row">
           <div class="large-4 columns">
-
-            <label for="status">Status:</label>
+            <%= f.label :status %>
               <% [ 'ongoing', 'finished' ].each do |status| %>
                 <br><%= radio_button_tag 'status', status, @status == status %>
                 <%= status.humanize %>
               <% end %>
-
           </div>
           <div class="large-6 columns">
-            <label for="genre">Genres:</label>
-
-              <%= f.select :genre_id, Genre.all.collect{ |c| [c.name, c.id ]}, {:multiple=>true} %>
+            <%= f.label :genre_id %>
+          <% for genre in Genre.find(:all) %>
+            <div>
+              <%= check_box_tag "anime[genre_ids][]", genre.id, @anime.genres.include?(genre) %>
+              <%= genre.name %>
+            </div>
+          <% end %>
           </div>
           <%= f.submit "ADD", class: "button tiny expand" %>
         </div>
-
       <% end %>
     </fieldset>
   </div>
