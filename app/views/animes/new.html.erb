@@ -1,8 +1,7 @@
 <div class="row">
   <div class="large-10 columns">
-  <%= form_for(@anime) do |f| %>
-    <form>
-      <fieldset>
+    <fieldset>
+      <%= form_for @anime do |f| %>
         <legend>Add Anime</legend>
         <div class="row">
           <div class="large-12 columns">
@@ -34,8 +33,7 @@
           </div>
           <%= f.submit "ADD", class: "button tiny expand" %>
         </div>
-      </fieldset>
-    </form>
-    <% end %>
+      <% end %>
+    </fieldset>
   </div>
 </div>

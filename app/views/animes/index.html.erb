@@ -1,9 +1,15 @@
 <ol>
-	<% @animes.each do |anime| %>
+	<% @anime.each do |anime| %>
 		<li>
 			<dl>
-				<%= @anime.title %>
+				<%= anime.title %> 
+        <%= anime.summary %> 
+        <%= anime.episodes %> 
+        <%= anime.status %> 
+        <%= anime.genre_id %>
 			</dl>
 		</li>
 	<% end %>
 </ol>
+
+<p><%= link_to "Add new anime", new_anime_path %></p>

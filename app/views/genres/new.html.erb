@@ -1,9 +1,7 @@
 <div class="row">
   <div class="large-10 columns">
-	  <form>
-      <fieldset>
-      <%= form_for :genre, url: genres_path do |f| %>
-
+    <fieldset>
+      <%= form_for @genre do |f| %>
         <legend>Add genre</legend>
         	<div class="row">
           	<div class="large-12 columns">
@@ -13,8 +11,7 @@
 	          </div>
 	        </div>
 	      <% end %>
-      </fieldset>
-	   </form>
+    </fieldset>
   </div>
 </div>
 
