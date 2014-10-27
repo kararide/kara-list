@@ -20,21 +20,21 @@
           </div>
         </div>
         <div class="row">
-          <div class="large-4 columns">
+          <div class="large-6 columns">
             <%= f.label :status %>
-              <% [ 'ongoing', 'finished' ].each do |status| %>
-                <br><%= radio_button_tag 'status', status, @status == status %>
-                <%= status.humanize %>
-              <% end %>
+            <div>
+            <%= f.label :status, 'Ongoing', :value => 'Ongoing' %>
+            <%= f.radio_button :status, 'Ongoing' %>
+            <%= f.label :status, 'Finished', :value => 'Finished' %>
+            <%= f.radio_button :status, 'Finished' %>
+            </div>
           </div>
           <div class="large-6 columns">
             <%= f.label :genre_id %>
-          <% for genre in Genre.all %>
-            <div>
+            <% for genre in Genre.all %>
               <%= check_box_tag "anime[genre_ids][]", genre.id, @anime.genres.include?(genre) %>
               <%= genre.name %>
-            </div>
-          <% end %>
+            <% end %>
           </div>
           <%= f.submit "ADD", class: "button tiny expand" %>
         </div>
