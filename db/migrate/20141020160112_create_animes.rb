@@ -5,7 +5,6 @@ class CreateAnimes < ActiveRecord::Migration
       t.text :summary
       t.integer :episodes
       t.string :status
-      t.references :genre, index: true
 
       t.timestamps
     end

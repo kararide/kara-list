@@ -1,1 +1,5 @@
 <h1>Anime: <%= @anime.title %></h1>
+
+<% @anime.genres.each do |gen| %>
+    <li><%= gen.name %></li>
+<% end %>

@@ -2,11 +2,13 @@
 	<% @anime.each do |anime| %>
 		<li>
 			<dl>
-				<%= anime.title %> 
-        <%= anime.summary %> 
-        <%= anime.episodes %> 
-        <%= anime.status %> 
-        <%= anime.genre_id %>
+				<%= anime.title %> | 
+        <%= anime.summary %> | 
+        <%= anime.episodes %> | 
+        <%= anime.status %> | 
+        <%= anime.genre_ids %> |
+	
+        <%#= for %>
 			</dl>
 		</li>
 	<% end %>

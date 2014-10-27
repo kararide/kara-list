@@ -29,7 +29,7 @@
           </div>
           <div class="large-6 columns">
             <%= f.label :genre_id %>
-          <% for genre in Genre.find(:all) %>
+          <% for genre in Genre.all %>
             <div>
               <%= check_box_tag "anime[genre_ids][]", genre.id, @anime.genres.include?(genre) %>
               <%= genre.name %>

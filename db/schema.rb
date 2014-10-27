@@ -18,14 +18,11 @@ ActiveRecord::Schema.define(version: 20141022172106) do
     t.text     "summary"
     t.integer  "episodes"
     t.string   "status"
-    t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "animes", ["genre_id"], name: "index_animes_on_genre_id"
-
-  create_table "animes_genres_joins", id: false, force: true do |t|
+  create_table "animes_genres", id: false, force: true do |t|
     t.integer "anime_id"
     t.integer "genre_id"
   end
