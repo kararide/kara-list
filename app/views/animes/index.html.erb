@@ -1,11 +1,11 @@
-<ol>
+<ul>
 	<% @anime.each do |anime| %>
 		<li>
 			<dl>
-				<%= anime.title %>
+				<%= link_to anime.title, anime %>
 			</dl>
 		</li>
 	<% end %>
-</ol>
+</ul>
 
 <p><%= link_to "Add new anime", new_anime_path %></p>

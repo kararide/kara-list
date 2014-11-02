@@ -22,14 +22,14 @@
         <div class="row">
           <div class="large-6 columns">
             <%= f.label :status %>
-            <div>
-            <%= f.label :status, 'Ongoing', :value => 'Ongoing' %>
             <%= f.radio_button :status, 'Ongoing' %>
-            <%= f.label :status, 'Finished', :value => 'Finished' %>
+            <%= f.label :status, 'Ongoing', :value => 'Ongoing' %>
             <%= f.radio_button :status, 'Finished' %>
-            </div>
+            <%= f.label :status, 'Finished', :value => 'Finished' %>
           </div>
-          <div class="large-6 columns">
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
             <%= f.label :genre_id %>
             <% for genre in Genre.all %>
               <%= check_box_tag "anime[genre_ids][]", genre.id, @anime.genres.include?(genre) %>
